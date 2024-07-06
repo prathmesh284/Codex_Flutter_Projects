@@ -7,8 +7,8 @@ class Assignment1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("AppBar"),
-        backgroundColor: Color.fromARGB(99, 81, 71, 188),
+        title: const Text("AppBar"),
+        backgroundColor: const Color.fromARGB(99, 81, 71, 188),
       ),
     );
   }

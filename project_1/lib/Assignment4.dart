@@ -7,12 +7,12 @@ class Assignment4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("AppBar"),
+        title: const Text("AppBar"),
       ),
       body:Container(
         height: 100,
         width: 100,
-        color: Color.fromARGB(100, 100, 100, 100),
+        color: const Color.fromARGB(100, 100, 100, 100),
       ),
     );
   }

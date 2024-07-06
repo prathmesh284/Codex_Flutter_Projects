@@ -7,9 +7,9 @@ class Assignment2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("AppBar"),
+        title: const Text("AppBar"),
       ),
-      body: Center(
+      body: const Center(
         child: Text("Demo"),
         )
     );
