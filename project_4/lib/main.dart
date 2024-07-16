@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_3/assignment8.dart';
+import 'package:project_4/assignment7.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Assignment8(),
+      home: Assignment7(),
       debugShowCheckedModeBanner: false,
     );
   }
