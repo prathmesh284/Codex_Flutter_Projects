@@ -534,7 +534,8 @@ class Assignment1 extends StatelessWidget {
                     ],),
                   ),
                   Container(
-                    margin: const EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(5),
+                    margin: const EdgeInsets.all(1),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
