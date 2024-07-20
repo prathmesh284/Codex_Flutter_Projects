@@ -4,8 +4,8 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
-class Assignment9 extends StatelessWidget {
-  const Assignment9({super.key});
+class Assignment1 extends StatelessWidget {
+  const Assignment1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class Assignment9 extends StatelessWidget {
                               borderRadius:const BorderRadius.all(Radius.circular(1000)),
                               border: Border.all(
                                 color: Colors.grey.shade800, // Border color
-                                width: 3.0,         // Border width
+                                width: 2.5,         // Border width
                                 ), 
                             ),
                             child: ClipOval(     
@@ -73,7 +73,7 @@ class Assignment9 extends StatelessWidget {
                               borderRadius: const BorderRadius.all(Radius.circular(1000)),
                               border: Border.all(
                                 color: Colors.green, // Border color
-                                width: 2.0,         // Border width
+                                width: 2.5,         // Border width
                                 ), 
                             ),
                             child: ClipOval(     
@@ -97,13 +97,12 @@ class Assignment9 extends StatelessWidget {
                             margin: const EdgeInsets.only(right: 5,top: 5,bottom: 5),
                             padding: const EdgeInsets.all(2),
                             decoration: BoxDecoration(
-                              //color: Colors.white,
-                              borderRadius: const BorderRadius.all(Radius.circular(1000)),
+                              shape: BoxShape.circle,
                               border: Border.all(
                                 color: Colors.red, // Border color
-                                width: 2.0,         // Border width
-                                ), 
-                            ),
+                                width: 2.5,         // Border width
+                                ),
+                              ),
                             child: ClipOval(     
                                       child: Image.network(
                                          width: 60,
@@ -129,7 +128,7 @@ class Assignment9 extends StatelessWidget {
                               borderRadius: const BorderRadius.all(Radius.circular(1000)),
                               border: Border.all(
                                 color: Colors.red, // Border color
-                                width: 2.0,         // Border width
+                                width: 2.5,         // Border width
                                 ), 
                             ),
                             child: ClipOval(     
@@ -157,7 +156,7 @@ class Assignment9 extends StatelessWidget {
                               borderRadius: const BorderRadius.all(Radius.circular(1000)),
                               border: Border.all(
                                 color: Colors.red, // Border color
-                                width: 2.0,         // Border width
+                                width: 2.5,         // Border width
                                 ), 
                             ),
                             child: ClipOval(     
@@ -185,7 +184,7 @@ class Assignment9 extends StatelessWidget {
                               borderRadius: const BorderRadius.all(Radius.circular(1000)),
                               border: Border.all(
                                 color: Colors.red, // Border color
-                                width: 2.0,         // Border width
+                                width: 2.5,         // Border width
                                 ), 
                             ),
                             child: ClipOval(     
@@ -206,14 +205,14 @@ class Assignment9 extends StatelessWidget {
                       child: Column(
                         children: [
                           Container(
-                            margin: const EdgeInsets.only(right: 5,top: 5,bottom: 5),
+                            margin: const EdgeInsets.only(right: 5,top: 10,bottom: 5),
                             padding: const EdgeInsets.all(2),
                             decoration: BoxDecoration(
                               //color: Colors.white,
                               borderRadius: const BorderRadius.all(Radius.circular(1000)),
                               border: Border.all(
                                 color: Colors.red, // Border color
-                                width: 2.0,         // Border width
+                                width: 2.5,         // Border width
                                 ), 
                             ),
                             child: ClipOval(     
@@ -239,18 +238,20 @@ class Assignment9 extends StatelessWidget {
                       Column(
                 children: [
                   Container(
-                    margin:const EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                          color: Colors.black,
-                          border: Border.all(
-                          color: Colors.black, // Border color
-                          width: 1,         // Border width
-                          ), 
-                          ),
+                    decoration:const BoxDecoration(
+                        color: Colors.black,
+                        border: Border(
+                          top: BorderSide(
+                            color: Color.fromARGB(109, 158, 158, 158),
+                            width: 1,
+                          ), // Border width
+                        ), 
+                    ),
                     child:Row(
                       children: [
                         Container(
                           padding: const EdgeInsets.all(1),
+                          margin: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                           color: Colors.black,
                           borderRadius: const BorderRadius.all(Radius.circular(1000)),
@@ -272,16 +273,16 @@ class Assignment9 extends StatelessWidget {
                           width: 5,
                         ),
                         const Text("mi_baburao_ganpatrao_apte",style: TextStyle(color: Colors.white),),
-                        const SizedBox(
+                        /*const SizedBox(
                           width: 140,
                         ),
-                        //const Icon(Icons.menu_outlined,color: Colors.white,size: 20,),
+                        const Icon(Icons.menu_outlined,color: Colors.white,size: 20,),*/
                     ],),
                   ),
                   SizedBox(
                     width: double.infinity,
                     child: Container(
-                      height: 300,
+                      //height: 300,
                       decoration: BoxDecoration(
                       color: Colors.black,
                       border: Border.all(
@@ -292,7 +293,8 @@ class Assignment9 extends StatelessWidget {
                       child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZRlcZFpTy7aL1J_zyShDr5iEd_fhi18QAIg&s",
                       fit: BoxFit.fitWidth,
                       ),
-                    ),                       ),
+                    ),                       
+                  ),
                   Container(
                     color: Colors.black,
                     margin:const EdgeInsets.only(top: 5,left: 10),
@@ -308,40 +310,52 @@ class Assignment9 extends StatelessWidget {
                         ),
                         Icon(Icons.send_outlined,color: Colors.white,size: 20,),
                         SizedBox(
-                          width: 305,
+                          width: 205,
                         ),
                         Icon(Icons.bookmark_outline,color: Colors.white,size: 20,),
                     ],),
                   ),
                   Container(
-                    margin: const EdgeInsets.all(10),
-                    child: const Column(
+                    padding: const EdgeInsets.all(10),
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("69 likes",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
-                        Row(
+                        const Text("69 likes",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
+                        /*Row(
                           children: [
                             Text("mi_baburao_ganpatrao_apte",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
                             SizedBox(width: 5,),
-                            Text("Jai Maharastra",style: TextStyle(color: Colors.white,)),
+                            Text("Jai Maharastra! Abe tu firse aa gaya,idhar zehar khane ka paisa nahi hai...",style: TextStyle(color: Colors.white,)),
                           ],
+                        ),*/
+                        RichText(
+                          text:const TextSpan(
+                            style: TextStyle(),
+                            children: [
+                              TextSpan(text:'mi_baburao_ganpatrao_apte\t',style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
+                              TextSpan(text:'Jai Maharastra! Abe tu firse aa gaya,idhar zehar khane ka paisa nahi hai re baba...Tu ja re,tu ja!',style:TextStyle(color: Colors.grey,fontSize:14,)),
+                            ]
+                          ),
                         ),
-                        Text("View all 8 comments",style: TextStyle(color: Colors.grey,)),
-                        Text("6 dats ago",style: TextStyle(color: Colors.grey,)),
+                        const Text("View all 8 comments",style: TextStyle(color: Colors.grey,)),
+                        const Text("6 days ago",style: TextStyle(color: Colors.grey,)),
                       ],
                     ),
                   ),
                 ],
                 ),
                       Container(
-                        margin:const EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                              color: Colors.black,
-                              border: Border.all(
-                              color: Colors.black, // Border color
-                              width: 1,         // Border width
-                              ), 
-                              ),
+                        padding: const EdgeInsets.all(5),
+                        margin: const EdgeInsets.all(1),
+                        decoration: const BoxDecoration(
+                          color: Colors.black,
+                          border: Border(
+                            top: BorderSide(
+                              color: Color.fromARGB(109, 158, 158, 158),
+                              width: 1,
+                           ),
+                         ),
+                       ),
                         child:Row(
                           children: [
                             Container(
@@ -367,16 +381,16 @@ class Assignment9 extends StatelessWidget {
                               width: 5,
                             ),
                             const Text("shri.narendra_damodardas_modi",style: TextStyle(color: Colors.white),),
-                            const SizedBox(
+                            /*const SizedBox(
                               width: 111,
                             ),
-                            //const Icon(Icons.menu_outlined,color:Colors.white,size: 20,),
+                            const Icon(Icons.menu_outlined,color:Colors.white,size: 20,),*/
                         ],),
                       ),   
                   SizedBox(
                     width: double.infinity,
                     child: Container(
-                      height: 300,
+                      //height: 300,
                       decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(
@@ -391,7 +405,7 @@ class Assignment9 extends StatelessWidget {
                   ),
                   Container(
                     color: Colors.black,
-                    margin:const EdgeInsets.all(10),
+                    margin:const EdgeInsets.only(top: 5,left: 10),
                     child: const Row(
                       children: [
                         Icon(Icons.favorite_outline,color: Colors.white,size: 20,),
@@ -404,26 +418,36 @@ class Assignment9 extends StatelessWidget {
                         ),
                         Icon(Icons.send_outlined,color: Colors.white,size: 20,),
                         SizedBox(
-                          width: 270,
+                          width: 205,
                         ),
                         Icon(Icons.bookmark_outline,color: Colors.white,size: 20,),
                     ],),
                   ),
                   Container(
-                    margin: const EdgeInsets.all(10),
-                    child: const Column(
+                    padding: const EdgeInsets.all(5),
+                    margin: const EdgeInsets.all(1),
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("69 likes",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
-                        Row(
+                        const Text("69 likes",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
+                        /*Row(
                           children: [
-                            Text("mi_baburao_ganpatrao_apte",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
+                            Text("shri.narendra_damodardas_modi",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
                             SizedBox(width: 5,),
-                            Text("Jai Maharastra",style: TextStyle(color: Colors.white,)),
+                            Text("Pyare Deshwasiyo! Aaj suno mere maan ki baat.",style: TextStyle(color: Colors.white,)),
                           ],
+                        ),*/
+                        RichText(
+                          text:const TextSpan(
+                            style: TextStyle(),
+                            children: [
+                              TextSpan(text:'shri.narendra_damodardas_modi\t',style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
+                              TextSpan(text:'Namskaar!Mere Pyare Deshwasiyo! Aaj suno mere maan ki baat.',style:TextStyle(color: Colors.grey,)),
+                            ]
+                          ),
                         ),
-                        Text("View all 8 comments",style: TextStyle(color: Colors.grey,)),
-                        Text("6 dats ago",style: TextStyle(color: Colors.grey,)),
+                        const Text("View all 8 comments",style: TextStyle(color: Colors.grey,)),
+                        const Text("6 days ago",style: TextStyle(color: Colors.grey,)),
                       ],
                     ),
                   ),
@@ -432,14 +456,17 @@ class Assignment9 extends StatelessWidget {
                 Column(
                 children: [
                   Container(
-                    margin:const EdgeInsets.all(5),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.all(5),
+                    margin: const EdgeInsets.all(1),
+                    decoration: const BoxDecoration(
                           color: Colors.black,
-                          border: Border.all(
-                          color: Colors.black, // Border color
-                          width: 1,         // Border width
-                          ), 
-                          ),
+                          border: Border(
+                            top: BorderSide(
+                              color: Color.fromARGB(109, 158, 158, 158),
+                              width: 1,
+                           ),
+                         ),
+                       ),
                     child:Row(
                       children: [
                         Container(
@@ -465,16 +492,16 @@ class Assignment9 extends StatelessWidget {
                           width: 5,
                         ),
                         const Text("baba_vanga",style: TextStyle(color: Colors.white),),
-                        const SizedBox(
+                        /*const SizedBox(
                           width: 245,
                         ),
-                        //const Icon(Icons.menu_outlined,color: Colors.white,size: 20,),
+                        const Icon(Icons.menu_outlined,color: Colors.white,size: 20,),*/
                     ],),
                   ),
                   SizedBox(
                     width: double.infinity,
                     child: Container(
-                      height: 300,
+                      //height: 300,
                       decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(
@@ -488,7 +515,7 @@ class Assignment9 extends StatelessWidget {
                     ),                       ),
                   Container(
                     color: Colors.black,
-                    margin:const EdgeInsets.all(10),
+                    margin:const EdgeInsets.only(top: 5,left: 10),
                     child: const Row(
                       children: [
                         Icon(Icons.favorite_border,color: Colors.white,size: 20,),
@@ -501,26 +528,35 @@ class Assignment9 extends StatelessWidget {
                         ),
                         Icon(Icons.send_outlined,color: Colors.white,size: 20,),
                         SizedBox(
-                          width: 270,
+                          width: 205,
                         ),
                         Icon(Icons.bookmark_outline,color: Colors.white,size: 20,),
                     ],),
                   ),
                   Container(
                     margin: const EdgeInsets.all(10),
-                    child: const Column(
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("69 likes",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
-                        Row(
+                        const Text("69 likes",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
+                        /*Row(
                           children: [
-                            Text("mi_baburao_ganpatrao_apte",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
+                            Text("baba_vanga",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
                             SizedBox(width: 5,),
-                            Text("Jai Maharastra",style: TextStyle(color: Colors.white,)),
+                            Text("Comment! Ab tum hi bata do.",style: TextStyle(color: Colors.white,)),
                           ],
+                        ),*/
+                        RichText(
+                          text:const TextSpan(
+                            style: TextStyle(),
+                            children: [
+                              TextSpan(text:'baba_vanga\t',style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
+                              TextSpan(text:'Comment? Bhai,Ab tu hi batade kya likhu.',style:TextStyle(color: Colors.grey,)),
+                            ]
+                          ),
                         ),
-                        Text("View all 8 comments",style: TextStyle(color: Colors.grey,)),
-                        Text("6 dats ago",style: TextStyle(color: Colors.grey,)),
+                        const Text("View all 8 comments",style: TextStyle(color: Colors.grey,)),
+                        const Text("6 days ago",style: TextStyle(color: Colors.grey,)),
                       ],
                     ),
                   ),
@@ -529,14 +565,17 @@ class Assignment9 extends StatelessWidget {
                 Column(
                 children: [
                   Container(
-                    margin:const EdgeInsets.all(5),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.all(5),
+                    margin: const EdgeInsets.all(1),
+                    decoration: const BoxDecoration(
                           color: Colors.black,
-                          border: Border.all(
-                          color: Colors.black, // Border color
-                          width: 1,         // Border width
-                          ), 
-                          ),
+                          border: Border(
+                            top: BorderSide(
+                              color: Color.fromARGB(109, 158, 158, 158),
+                              width: 1,
+                           ),
+                         ),
+                       ),
                     child:Row(
                       children: [
                         Container(
@@ -562,16 +601,16 @@ class Assignment9 extends StatelessWidget {
                           width: 5,
                         ),
                         const Text("mama_shakuni",style: TextStyle(color: Colors.white),),
-                        const SizedBox(
+                        /*const SizedBox(
                           width: 230,
                         ),
-                        //const Icon(Icons.menu_outlined,color: Colors.white,size: 20,),
+                        const Icon(Icons.menu_outlined,color: Colors.white,size: 20,),*/
                     ],),
                   ),
                   SizedBox(
                     width: double.infinity,
                     child: Container(
-                      height: 300,
+                      //height: 300,
                       decoration: BoxDecoration(
                       color: Colors.black,
                       border: Border.all(
@@ -585,7 +624,7 @@ class Assignment9 extends StatelessWidget {
                     ),                       ),
                   Container(
                     color: Colors.black,
-                    margin:const EdgeInsets.all(10),
+                    margin:const EdgeInsets.only(top: 5,left: 10),
                     child: const Row(
                       children: [
                         Icon(Icons.favorite_border,color: Colors.white,size: 20,),
@@ -598,26 +637,36 @@ class Assignment9 extends StatelessWidget {
                         ),
                         Icon(Icons.send_outlined,color: Colors.white,size: 20,),
                         SizedBox(
-                          width: 270,
+                          width: 205,
                         ),
                         Icon(Icons.bookmark_outline,color: Colors.white,size: 20,),
                     ],),
                   ),
                   Container(
-                    margin: const EdgeInsets.all(10),
-                    child: const Column(
+                    padding: const EdgeInsets.all(5),
+                    margin: const EdgeInsets.all(1),
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("69 likes",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
-                        Row(
+                        const Text("69 likes",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
+                        /*Row(
                           children: [
-                            Text("mi_baburao_ganpatrao_apte",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
+                            Text("mama_shakuni",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
                             SizedBox(width: 5,),
-                            Text("Jai Maharastra",style: TextStyle(color: Colors.white,)),
+                            Text("Mere Bachhe! Ranbhumi se pehle,maanbhumi mein khela jata hai.",style: TextStyle(color: Colors.white,)),
                           ],
+                        ),*/
+                        RichText(
+                          text:const TextSpan(
+                            style: TextStyle(),
+                            children: [
+                              TextSpan(text:'mama_shakuni\t',style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
+                              TextSpan(text:'Mere Bachhe! Ranbhumi se pehle,maanbhumi mein khela jata hai.',style:TextStyle(color: Colors.grey,)),
+                            ]
+                          ),
                         ),
-                        Text("View all 8 comments",style: TextStyle(color: Colors.grey,)),
-                        Text("6 dats ago",style: TextStyle(color: Colors.grey,)),
+                        const Text("View all 8 comments",style: TextStyle(color: Colors.grey,)),
+                        const Text("6 days ago",style: TextStyle(color: Colors.grey,)),
                       ],
                     ),
                   ),
@@ -626,14 +675,17 @@ class Assignment9 extends StatelessWidget {
                 Column(
                 children: [
                   Container(
-                    margin:const EdgeInsets.all(5),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.all(5),
+                    margin:const EdgeInsets.all(1),
+                    decoration: const BoxDecoration(
                           color: Colors.black,
-                          border: Border.all(
-                          color: Colors.black, // Border color
-                          width: 1,         // Border width
-                          ), 
-                          ),
+                          border: Border(
+                            top: BorderSide(
+                              color: Color.fromARGB(109, 158, 158, 158),
+                              width: 1,
+                           ),
+                         ),
+                       ),
                     child:Row(
                       children: [
                         Container(
@@ -659,16 +711,16 @@ class Assignment9 extends StatelessWidget {
                           width: 5,
                         ),
                         const Text("udya_shetty",style: TextStyle(color: Colors.white),),
-                        const SizedBox(
+                        /*const SizedBox(
                           width: 244,
                         ),
-                        //const Icon(Icons.menu_outlined,color: Colors.white,size: 20,),
+                        const Icon(Icons.menu_outlined,color: Colors.white,size: 20,),*/
                     ],),
                   ),
                   SizedBox(
                     width: double.infinity,
                     child: Container(
-                      height: 300,
+                      //height: 300,
                       decoration: BoxDecoration(
                       color: Colors.black,
                       border: Border.all(
@@ -682,7 +734,7 @@ class Assignment9 extends StatelessWidget {
                     ),                       ),
                   Container(
                     color: Colors.black,
-                    margin:const EdgeInsets.all(10),
+                    margin:const EdgeInsets.only(top: 5,left: 10),
                     child: const Row(
                       children: [
                         Icon(Icons.favorite_border,color: Colors.white,size: 20,),
@@ -695,26 +747,35 @@ class Assignment9 extends StatelessWidget {
                         ),
                         Icon(Icons.send_outlined,color: Colors.white,size: 20,),
                         SizedBox(
-                          width: 270,
+                          width: 205,
                         ),
                         Icon(Icons.bookmark_outline,color: Colors.white,size: 20,),
                     ],),
                   ),
                   Container(
                     margin: const EdgeInsets.all(10),
-                    child: const Column(
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("69 likes",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
-                        Row(
+                        const Text("69 likes",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
+                        /*Row(
                           children: [
-                            Text("mi_baburao_ganpatrao_apte",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
+                            Text("udya_shetty",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
                             SizedBox(width: 5,),
-                            Text("Jai Maharastra",style: TextStyle(color: Colors.white,)),
+                            Text("Control Control! Bhagwan ka diya sabkuch hai dukh hai,dard hai,berozgari hai,upar se tum!",style: TextStyle(color: Colors.white,)),
                           ],
+                        ),*/
+                        RichText(
+                          text:const TextSpan(
+                            style: TextStyle(),
+                            children: [
+                              TextSpan(text:'udya_shetty\t',style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
+                              TextSpan(text:'Control Control!!.Bhagwan ka diya sabkuch hai dukh hai,dard hai,berozgari hai,upar se tum!',style:TextStyle(color: Colors.grey,)),
+                            ]
+                          ),
                         ),
-                        Text("View all 8 comments",style: TextStyle(color: Colors.grey,)),
-                        Text("6 dats ago",style: TextStyle(color: Colors.grey,)),
+                        const Text("View all 8 comments",style: TextStyle(color: Colors.grey,)),
+                        const Text("6 days ago",style: TextStyle(color: Colors.grey,)),
                       ],
                     ),
                   ),
@@ -723,14 +784,17 @@ class Assignment9 extends StatelessWidget {
                 Column(
                 children: [
                   Container(
-                    margin:const EdgeInsets.all(5),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.all(5),
+                    margin: const EdgeInsets.all(1),
+                    decoration: const BoxDecoration(
                           color: Colors.black,
-                          border: Border.all(
-                          color: Colors.black, // Border color
-                          width: 1,         // Border width
-                          ), 
-                          ),
+                          border: Border(
+                            top: BorderSide(
+                              color: Color.fromARGB(109, 158, 158, 158),
+                              width: 1,
+                           ),
+                         ),
+                       ),
                     child:Row(
                       children: [
                         Container(
@@ -756,30 +820,28 @@ class Assignment9 extends StatelessWidget {
                           width: 5,
                         ),
                         const Text("dr.ghunghroo",style: TextStyle(color: Colors.white),),
-                        const SizedBox(
+                        /*const SizedBox(
                           width: 234,
                         ),
-                        //const Icon(Icons.menu_outlined,color: Colors.white,size: 20,),
+                        const Icon(Icons.menu_outlined,color: Colors.white,size: 20,),*/
                     ],),
                   ),
-                  SizedBox(
-                    width: double.infinity,
-                    child: Container(
-                      height: 300,
-                      decoration: BoxDecoration(
-                      color: Colors.black,
-                      border: Border.all(
-                      color: Colors.black, // Border color
-                      width: 0.5,         // Border width
-                      ), 
+                  Container(
+                    //height: 300,
+                    decoration: BoxDecoration(
+                    color: Colors.black,
+                    border: Border.all(
+                    color: Colors.black, // Border color
+                    width: 0.5,         // Border width
+                    ), 
+                  ),
+                    child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMGHq2RSmptRXradnEbTldqGEjbSx4DtxRiQ&s",
+                    fit: BoxFit.fitWidth,
                     ),
-                      child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMGHq2RSmptRXradnEbTldqGEjbSx4DtxRiQ&s",
-                      fit: BoxFit.fitWidth,
-                      ),
-                    ),                       ),
+                  ),
                   Container(
                     color: Colors.black,
-                    margin:const EdgeInsets.all(10),
+                    margin:const EdgeInsets.only(top: 5,left: 10),
                     child: const Row(
                       children: [
                         Icon(Icons.favorite_border,color: Colors.white,size: 20,),
@@ -792,26 +854,36 @@ class Assignment9 extends StatelessWidget {
                         ),
                         Icon(Icons.send_outlined,color: Colors.white,size: 20,),
                         SizedBox(
-                          width: 270,
+                          width: 205,
                         ),
                         Icon(Icons.bookmark_outline,color: Colors.white,size: 20,),
                     ],),
                   ),
                   Container(
-                    margin: const EdgeInsets.all(10),
-                    child: const Column(
+                    padding: const EdgeInsets.all(5),
+                    margin: const EdgeInsets.all(1),
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("69 likes",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
-                        Row(
+                        const Text("69 likes",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
+                        /*Row(
                           children: [
-                            Text("mi_baburao_ganpatrao_apte",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
+                            Text("dr.ghunghroo",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
                             SizedBox(width: 5,),
-                            Text("Jai Maharastra",style: TextStyle(color: Colors.white,)),
+                            Text("Paisa!! Tera baap yaha chod kar gaya tha ki teri maa.",style: TextStyle(color: Colors.white,)),
                           ],
+                        ),*/
+                        RichText(
+                          text:const TextSpan(
+                            style: TextStyle(),
+                            children: [
+                              TextSpan(text:'dr.ghunghroo\t',style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
+                              TextSpan(text:'Paisa!! Tera baap yaha chod kar gaya tha ki teri maa.',style:TextStyle(color: Colors.grey,)),
+                            ]
+                          ),
                         ),
-                        Text("View all 8 comments",style: TextStyle(color: Colors.grey,)),
-                        Text("6 dats ago",style: TextStyle(color: Colors.grey,)),
+                        const Text("View all 8 comments",style: TextStyle(color: Colors.grey,)),
+                        const Text("6 days ago",style: TextStyle(color: Colors.grey,)),
                       ],
                     ),
                   ),
