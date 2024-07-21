@@ -13,11 +13,14 @@ class Assignment1 extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: const Text(
-          "Instagram",style: TextStyle(color: Colors.pinkAccent,         // Change font color
-              fontSize: 24.0,               // Change font size
-              fontWeight: FontWeight.bold,  // Change font weight
-              fontStyle: FontStyle.italic,
+          "Instagram",style: TextStyle(
+              fontFamily: "Playwrite BE VLG",
+              color: Colors.pinkAccent,         // Change font color
+              fontSize: 24.0,            // Change font size
+              //fontWeight: FontWeight.bold,  // Change font weight
+              //fontStyle: FontStyle.italic,
           ),
+          //style:GoogleFonts.lindenHill(textStyle:TextStyle(color:Colors.white)),
         ),
         actions: const [Icon(Icons.favorite_border_outlined,color: Colors.white,size: 20,),SizedBox(width: 10),Icon(Icons.message_outlined,color: Colors.white,size: 20,),SizedBox(width: 5)],
       ),
