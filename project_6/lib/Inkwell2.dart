@@ -1,26 +1,5 @@
 import 'package:flutter/material.dart';
 
-class InkwellScreen1 extends StatelessWidget {
-  const InkwellScreen1({super.key});
-  final String name="Pratham";
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Row(
-        children: [
-          ElevatedButton(
-            onPressed:(){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>InkwellScreen2(name:name)));
-            }, 
-            child: const Text("Click Me")),
-          Text("Name is $name")
-        ],)
-    );
-  }
-}
-
 class InkwellScreen2 extends StatelessWidget {
   final String name;
   const InkwellScreen2({super.key,required this.name});

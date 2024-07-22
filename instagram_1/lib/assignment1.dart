@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Assignment1 extends StatelessWidget {
   const Assignment1({super.key});
@@ -12,14 +13,19 @@ class Assignment1 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: const Text(
-          "Instagram",style: TextStyle(
-              fontFamily: "Playwrite BE VLG",
+        title:Text(
+          "Instagram",style:GoogleFonts.lindenHill(textStyle:const TextStyle(
+            color: Colors.pinkAccent,         // Change font color
+            fontSize: 28.0,            // Change font size
+            //fontWeight: FontWeight.bold,
+          )),
+          /*style: TextStyle(
+              //fontFamily: "Playwrite BE VLG",
               color: Colors.pinkAccent,         // Change font color
               fontSize: 24.0,            // Change font size
-              //fontWeight: FontWeight.bold,  // Change font weight
+              fontWeight: FontWeight.bold,  // Change font weight
               //fontStyle: FontStyle.italic,
-          ),
+          ),*/
           //style:GoogleFonts.lindenHill(textStyle:TextStyle(color:Colors.white)),
         ),
         actions: const [Icon(Icons.favorite_border_outlined,color: Colors.white,size: 20,),SizedBox(width: 10),Icon(Icons.message_outlined,color: Colors.white,size: 20,),SizedBox(width: 5)],
