@@ -39,33 +39,34 @@ class Ass2Screen1 extends StatelessWidget {
                     alignment: Alignment.bottomCenter,
                     heightFactor: 20,
                     child: Container(
-                    height: 150,
-                    width: 300,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(color: Colors.black,width: 1),
-                      borderRadius: const BorderRadius.only(topLeft: Radius.elliptical(100,30),topRight: Radius.elliptical(100,20)),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        const Text("Reservation Now",style:TextStyle(color: Colors.black)),
-                        InkWell(
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>const Ass2Screen2())),
-                          child: Container(
-                            height: 30,
-                            width: 100,
-                            padding: const EdgeInsets.all(3),
-                            decoration: const BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.all(Radius.circular(10)),
-                            ),
-                            child: const Center(child: Text("Book Now",style:TextStyle(color: Colors.white))),
-                          ),
+                        height: 150,
+                        width:MediaQuery.of(context).size.width,
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(color: Colors.black,width: 1),
+                          borderRadius: const BorderRadius.only(topLeft: Radius.elliptical(100,30),topRight: Radius.elliptical(100,30)),
                         ),
-                      ],
-                    ),
-                                  ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            const Text("Reservation Now",style:TextStyle(color: Colors.black)),
+                            InkWell(
+                              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>const Ass2Screen2())),
+                              child: Container(
+                                height: 30,
+                                width: 100,
+                                padding: const EdgeInsets.all(3),
+                                decoration: const BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                                ),
+                                child: const Center(child: Text("Book Now",style:TextStyle(color: Colors.white))),
+                              ),
+                            ),
+                          ],
+                        ),
+                    ),  
                   ),
                 )
               )
