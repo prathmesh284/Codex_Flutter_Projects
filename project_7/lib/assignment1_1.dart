@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project_7/assignment1_2.dart';
 
 class Ass1Screen1 extends StatelessWidget {
+  final String image1="images/image1.png";
   const Ass1Screen1({super.key});
 
   @override
@@ -23,7 +24,7 @@ class Ass1Screen1 extends StatelessWidget {
                 width: 196,
                 height: 195,
                 decoration: BoxDecoration(
-                  image: const DecorationImage(image: AssetImage('images/image1.png'),
+                  image: DecorationImage(image: AssetImage(image1),
                     fit: BoxFit.cover,
                     ),
                   border: Border.all(color: Colors.black,width: 1),
@@ -32,7 +33,7 @@ class Ass1Screen1 extends StatelessWidget {
               ),
               const SizedBox(height: 50,),
               InkWell(
-                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>const Ass1Screen2())),
+                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=> Ass1Screen2(image: image1,))),
                 child: Container(
                   height: 40,
                   width: 100,

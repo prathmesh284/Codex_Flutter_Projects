@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Ass1Screen2 extends StatelessWidget {
-  const Ass1Screen2({super.key});
+  final String image;
+  const Ass1Screen2({super.key,required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +23,10 @@ class Ass1Screen2 extends StatelessWidget {
               children: [
                 Container(
                   height: 300,
+                  width:250,
                   padding: const EdgeInsets.all(5),
                   decoration: BoxDecoration(
-                    image: const DecorationImage(image: AssetImage('images/image1.png'),
+                    image:  DecorationImage(image: AssetImage(image),
                       fit: BoxFit.cover,
                       ),
                     border: Border.all(color: Colors.black),
