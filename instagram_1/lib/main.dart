@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_1/assignment1.dart';
+import 'package:instagram_1/assignment3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Assignment1(),
+      home: Assignment3(imgUrl:"",name:"",icon:Icon(Icons.favorite_border,color: Colors.white),counter: 68,),
       debugShowCheckedModeBanner: false,
     );
   }
