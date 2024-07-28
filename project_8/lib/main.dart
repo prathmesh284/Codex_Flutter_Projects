@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_8/assignment1.dart';
+import 'package:project_8/assignment2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Assignment1(),
+      home: const Assignment2(),
       debugShowCheckedModeBanner: false,
     );
   }
