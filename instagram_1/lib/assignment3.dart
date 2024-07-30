@@ -110,22 +110,25 @@ class _Assignment2State extends State<Assignment3> {
   Widget likeSection({required Icon icon}){
     return Container(
       color: Colors.black,
-      margin:const EdgeInsets.only(top: 5,left: 10),
+      margin:const EdgeInsets.only(top: 5,left: 10,right: 10,bottom: 5,),
       child:  Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            child: icon,
-          ),
-          const SizedBox(
-            width: 10,
-          ),
-          const Icon(Icons.comment_outlined,color: Colors.white,size: 20,),
-          const SizedBox(
-            width: 10,
-          ),
-          const Icon(Icons.send_outlined,color: Colors.white,size: 20,),
-          const SizedBox(
-            width: 205,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                child: icon,
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              const Icon(Icons.comment_outlined,color: Colors.white,size: 20,),
+              const SizedBox(
+                width: 10,
+              ),
+              const Icon(Icons.send_outlined,color: Colors.white,size: 20,),
+            ],
           ),
           const Icon(Icons.bookmark_outline,color: Colors.white,size: 20,),
         ],
