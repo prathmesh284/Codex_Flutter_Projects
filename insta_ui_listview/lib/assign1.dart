@@ -128,16 +128,12 @@ class _Assignment1State extends State<Assignment1> {
               },
             ),
           ),
-          Container(
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 1.0),
-              child: ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: info.length,
-                itemBuilder:(context,index){
-                  return const InstagramFeed();
-                },
-              ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: info.length,
+              itemBuilder:(context,index){
+                return const InstagramFeed();
+              },
             ),
           )
         ],
