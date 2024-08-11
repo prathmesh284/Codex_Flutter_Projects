@@ -43,7 +43,7 @@ class _Assignment1State extends State<Assignment1> {
                           width: 70,
                           height: 70,
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            image: DecorationImage(image: NetworkImage(info[0].imgUrl)),
                             border: Border.all(color: Colors.grey,),
                             borderRadius: BorderRadius.circular(50),
                             //image: DecorationImage(image: image),
@@ -93,50 +93,49 @@ class _Assignment1State extends State<Assignment1> {
         ),
         actions: const [Icon(Icons.favorite_border_outlined,size: 20,),SizedBox(width: 10),Icon(Icons.message_outlined,size: 20,),SizedBox(width: 5)],
       ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 100,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: info.length,
-              itemBuilder: (context, index) {
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                    margin: const EdgeInsets.only(right: 5,top: 5,bottom: 5,left: 1),
-                    padding: const EdgeInsets.all(2),
-                    decoration:BoxDecoration(
-                      borderRadius: const BorderRadius.all(Radius.circular(1000)),
-                      border: Border.all(
-                        color: info[index].color, // Border color
-                        width: 2.5,         // Border width
-                      ), 
-                    ),
-                    child: ClipOval(     
-                      child: Image.network(
-                        width: 60,
-                        height: 60,
-                        info[index].imgUrl,fit: BoxFit.cover,
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            SizedBox(
+              height: 100,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: info.length,
+                itemBuilder: (context, index) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                      margin: const EdgeInsets.only(right: 5,top: 5,bottom: 5,left: 1),
+                      padding: const EdgeInsets.all(2),
+                      decoration:BoxDecoration(
+                        borderRadius: const BorderRadius.all(Radius.circular(1000)),
+                        border: Border.all(
+                          color: info[index].color, // Border color
+                          width: 2.5,         // Border width
+                        ), 
+                      ),
+                      child: ClipOval(     
+                        child: Image.network(
+                          width: 60,
+                          height: 60,
+                          info[index].imgUrl,fit: BoxFit.cover,
+                        ),
                       ),
                     ),
-                  ),
-                  Text(info[index].name,style: const TextStyle(color: Colors.white),),
-                  ],
-                );
-              },
+                    Text(info[index].name,style: const TextStyle(color: Colors.white),),
+                    ],
+                  );
+                },
+              ),
             ),
-          ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: info.length,
-              itemBuilder:(context,index){
-                return const InstagramFeed();
-              },
+            Card(
+              color: Colors.black,
+              child:const InstagramFeed(),
             ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }

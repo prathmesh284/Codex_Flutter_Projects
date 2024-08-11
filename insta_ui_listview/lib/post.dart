@@ -25,11 +25,13 @@ class InstagramFeed extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: info.length,
+      physics: NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
       itemBuilder: (context, index) {
         final post = info[index];
         return postContainer(
           name: post.name,
-          imgurl: "$post.imgurl",
+          imgurl: post.imgUrl,
           color: post.color,
           icon: post.iconFav,
         );
@@ -46,70 +48,57 @@ class InstagramFeed extends StatelessWidget {
     return Column(
       children: [
         Container(
-          height:50,
-          decoration: const BoxDecoration(
-            color: Colors.black,
-            border: Border(
-              top: BorderSide(
-                color: Color.fromARGB(109, 158, 158, 158),
-                width: 1,
-              ),
-            ),
-          ),
-          child: Row(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(1),
-                margin: const EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: const BorderRadius.all(Radius.circular(1000)),
-                  border: Border.all(
-                    color: color, // Border color
-                    width: 1, // Border width
-                  ),
-                ),
-                child: ClipOval(
-                  child: Image.network(
-                    "$imgurl",
-                    width: 25,
-                    height: 25,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                width: 5,
-              ),
-              Text(
-                "$name",
-                style: const TextStyle(color: Colors.white),
-              ),
-            ],
+      padding: const EdgeInsets.all(5),
+      margin: const EdgeInsets.all(1),
+      decoration: const BoxDecoration(
+        border: Border(
+          top: BorderSide(
+            color: Color.fromARGB(109, 158, 158, 158),
+            width: 1,
           ),
         ),
+      ),
+      child:Row(
+        children: [
+          Container(
+            width: 30,
+            height: 30,
+            padding: const EdgeInsets.all(1),
+            decoration: BoxDecoration(
+              image: DecorationImage(image: NetworkImage("$imgurl"),fit: BoxFit.cover,),
+              borderRadius: const BorderRadius.all(Radius.circular(1000)),
+              border: Border.all(
+                color: color, // Border color
+                width: 2,         // Border width
+              ), 
+            ),
+          ),
+          const SizedBox(
+            width: 10,
+          ),
+          Text("$name",style: const TextStyle(color: Colors.white,fontSize: 14,fontWeight:FontWeight.bold),),
+        ],
+      ),
+    ),
         SizedBox(
-          width: double.infinity,
-          height: 400,
+          height: 300,
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.black,
-              border: Border.all(
-                color: Colors.black, // Border color
+              image: DecorationImage(image: NetworkImage("$imgurl"),fit: BoxFit.fitWidth),
+              border: Border.all(// Border color
                 width: 0.5, // Border width
               ),
-            ),
-            child: Image.network(
-              "$imgurl",
-              fit: BoxFit.fitWidth,
             ),
           ),
         ),
         Container(
-          color: Colors.black,
-          height:30,
-          margin: const EdgeInsets.only(top: 5, left: 10),
-          child: Row(
+      color: Colors.black,
+      margin:const EdgeInsets.only(top: 5,left: 10,right: 10,bottom: 5,),
+      child:  Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 child: icon,
@@ -117,27 +106,25 @@ class InstagramFeed extends StatelessWidget {
               const SizedBox(
                 width: 10,
               ),
-              const Icon(Icons.comment_outlined, color: Colors.white, size: 20),
+              const Icon(Icons.comment_outlined,color: Colors.white,size: 20,),
               const SizedBox(
                 width: 10,
               ),
-              const Icon(Icons.send_outlined, color: Colors.white, size: 20),
-              const SizedBox(
-                width: 205,
-              ),
-              const Icon(Icons.bookmark_outline, color: Colors.white, size: 20),
+              const Icon(Icons.send_outlined,color: Colors.white,size: 20,),
             ],
           ),
-        ),
+          const Icon(Icons.bookmark_outline,color: Colors.white,size: 20,),
+        ],
+      ),
+    ),
         Container(
           padding: const EdgeInsets.all(10),
-          height:100,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
                 "69 likes",
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,),
               ),
               RichText(
                 text: const TextSpan(
@@ -145,22 +132,22 @@ class InstagramFeed extends StatelessWidget {
                   children: [
                     TextSpan(
                       text: 'mi_baburao_ganpatrao_apte\t',
-                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,),
                     ),
                     TextSpan(
                       text: 'Jai Maharastra! Abe tu firse aa gaya,idhar zehar khane ka paisa nahi hai re baba...Tu ja re,tu ja!',
-                      style: TextStyle(color: Colors.grey, fontSize: 14),
+                      style: TextStyle(color: Colors.grey, fontSize: 14,),
                     ),
                   ],
                 ),
               ),
               const Text(
                 "View all 8 comments",
-                style: TextStyle(color: Colors.grey),
+                style: TextStyle(color: Colors.grey,),
               ),
               const Text(
                 "6 days ago",
-                style: TextStyle(color: Colors.grey),
+                style: TextStyle(color: Colors.grey,),
               ),
             ],
           ),
