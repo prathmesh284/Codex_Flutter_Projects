@@ -33,11 +33,36 @@ class _Screen1State extends State<Screen1> {
         itemCount: todo.length,
         itemBuilder:(context,index){
           return InkWell(
+            onDoubleTap:(){
+              showDialog(context: context, 
+              barrierColor: Colors.grey.shade800,
+              builder: (context){
+                return Center(
+                  child: Container(
+                    height: 300,
+                    width: 300,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(color: Colors.black,width: 1),
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                    padding: EdgeInsets.all(10),
+                    child: Column(
+                      children: [
+                        Text(todo[index]['taskName']),
+                        SizedBox.square(),
+                        Text(todo[index]['taskDiscription']),
+                      ],
+                    ),
+                  ),
+                );
+              });
+            },
             onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (context)=>(Screen2(taskName:todo[index]['taskName'],taskDiscription:todo[index]['taskDiscription'],)))),
             child: Container(
               padding: EdgeInsets.only(left: 15),
-              margin: EdgeInsets.only(bottom: 1),
-              height: 35,
+              margin: EdgeInsets.only(bottom: 3,top: 1,left: 3,right: 3),
+              height: 50,
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(3),
@@ -47,7 +72,32 @@ class _Screen1State extends State<Screen1> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(todo[index]['taskName'],style: TextStyle(color: Colors.black),),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                    Text(todo[index]['taskName'],style: TextStyle(color: Colors.black),),
+                    Row(
+                      children: [
+                        GestureDetector(
+                          child: Icon(Icons.edit),
+                          onTap: () {
+                            //
+                            setState(() {});
+                          },
+                        ),
+                        SizedBox(width: 10,),
+
+                        GestureDetector(
+                          child: Icon(Icons.delete_outline),
+                          onTap: () {
+                            todo.removeAt(index);
+                            setState(() {});
+                          },
+                        ),
+                        SizedBox(width: 10,)
+                      ],
+                    )
+                  ],)
                 ],
               ),
             ),
@@ -126,7 +176,7 @@ class _Screen1State extends State<Screen1> {
         centerTitle: true,
         backgroundColor: Colors.deepPurple.shade400,
       ),
-      //backgroundColor: Colors.black,
+      backgroundColor: Colors.grey.shade600,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
