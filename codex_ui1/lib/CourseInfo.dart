@@ -52,8 +52,8 @@ class CourseInfo extends StatelessWidget {
                   padding: EdgeInsets.all(3),
                   width: MediaQuery.sizeOf(context).width,
                   decoration: BoxDecoration(
-                    color: Colors.grey.shade300,
-                    border: Border.all(width: 0.5,color: Colors.grey.shade300),
+                    color: Colors.white,
+                    border: Border.all(width: 0.5),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
