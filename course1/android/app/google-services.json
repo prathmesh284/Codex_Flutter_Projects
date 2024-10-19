@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "287140111388",
+    "project_id": "flutter-course1-89e79",
+    "storage_bucket": "flutter-course1-89e79.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:287140111388:android:aa735bc95fb180d7622bd9",
+        "android_client_info": {
+          "package_name": "com.example.course1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP0EiuWkUCfkBzC2CK-82jbmtSvop5sxg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
