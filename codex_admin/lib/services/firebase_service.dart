@@ -17,11 +17,12 @@ class FirebaseService {
   }
 
   /// Add a new topic to a course
-  Future<void> addTopic(String courseId, String title, String description) async {
+  Future<void> addTopic(String courseId, String title, String description,String videolink) async {
     try {
       await _firestore.collection('Courses').doc(courseId).collection('Topics').add({
         'title': title,
         'description': description,
+        'videoLink':videolink,
       });
       print("Topic added successfully");
     } catch (e) {

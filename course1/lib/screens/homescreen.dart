@@ -1,17 +1,28 @@
-import 'package:course1/screens/CoursePage.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:course1/screens/topicsscreen.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key,required this.name});
-  final String name; 
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey,
+      appBar: AppBar(
+        title: Text("Welcome Pratham!",style: TextStyle(fontWeight: FontWeight.bold),),
+        backgroundColor: Colors.purple.shade400,
+      ),
       body:Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            height:250,
+            height:225,
             width: double.infinity,
             decoration: BoxDecoration(
               color:Colors.deepPurple,
@@ -34,7 +45,7 @@ class HomePage extends StatelessWidget {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Hi, $name",style:TextStyle(color: Colors.white,fontSize: 42)),
+                      Text("Hi, Pratham!",style:TextStyle(color: Colors.white,fontSize: 42)),
                       SizedBox(height: 10),
                       Text("Hope you are fine",style:TextStyle(color: Colors.white,fontSize: 20))
                     ],  
@@ -44,55 +55,45 @@ class HomePage extends StatelessWidget {
             ) ,
           ),
           SizedBox(height: 10,),
+          
           Expanded(
             child: Container(
-              child: ListView.builder(
-                //shrinkWrap: true,
-                itemCount: data.length,
-                itemBuilder: (context,i){
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text("${data[i]["courseType"]}",style: TextStyle(fontWeight: FontWeight.bold),),
-                      ),
-                      SizedBox(
-                      width: MediaQuery.sizeOf(context).width,
-                      height:225 ,
-                  child: ListView.builder(
-                  shrinkWrap: true,
-                  controller:ScrollController(keepScrollOffset: true),
-                  scrollDirection: Axis.horizontal,
-                  itemCount: data[i]["courses"].length,
-                  itemBuilder: (context,index){
-                    return InkWell(
-                      onTap: ()=>Navigator.push(context,MaterialPageRoute(builder: (context)=>CoursePage(courseName: data[i]["courses"][index]["courseName"],course: data[0]["courses"][index],))), 
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            height:200,
-                            width: 200,
-                            margin: EdgeInsets.only(left:10),
-                            decoration: BoxDecoration(
-                              border: Border.all(width: 0.5,color: Colors.black),
-                              borderRadius: BorderRadius.circular(5),
-                              image: DecorationImage(image: AssetImage(data[i]["courses"][index]["image"]))
-                            ),
-                            //child: Image.asset(data[0]["courses"][index]["image"],fit: BoxFit.cover,),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: StreamBuilder(
+                  stream: FirebaseFirestore.instance.collection("Courses").snapshots(),
+                  builder: (context, snapshot) {
+                    var course = snapshot.data!.docs;
+                    if (!snapshot.hasData) {
+                      return CircularProgressIndicator();
+                    }else{
+                    return GridView.builder(gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2), 
+                    itemCount: snapshot.data!.docs.length,
+                    itemBuilder: (context,index){
+                      var singleCourse = course[index];
+                      return InkWell(
+                        onTap: () => Navigator.push(context,MaterialPageRoute(builder: (context)=>Topicsscreen(courseId: singleCourse.id,courseName: singleCourse["title"],))),
+                        child: Container(
+                          height: 200,
+                          width: 200,
+                          margin:EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color:Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: List.empty(),
+                            border: Border.all(color: Colors.black12,style: BorderStyle.solid),
                           ),
-                          SizedBox(height: 5,),
-                          Text(data[i]["courses"][index]["courseName"])
-                        ],
-                      ),
-                    );
+                          child: Center(
+                            child: Text(
+                              "${singleCourse["title"]}"
+                            ),
+                          ),
+                        ),
+                      );
+                    });
+                    }
                   }
                 ),
-              ),
-              ],
-              );
-              }
               ),
             ),
           ),

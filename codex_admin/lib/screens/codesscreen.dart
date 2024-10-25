@@ -38,6 +38,7 @@ class _CodesScreenState extends State<CodesScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Codes in ${widget.topicTitle}'),
+        backgroundColor: Colors.purple.shade400,
       ),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance
@@ -90,6 +91,7 @@ class _CodesScreenState extends State<CodesScreen> {
           children: [
             TextField(
               controller: _codeController,
+              maxLines:10,
               decoration: InputDecoration(labelText: 'Code'),
             ),
             TextField(

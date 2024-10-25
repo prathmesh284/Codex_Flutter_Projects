@@ -18,13 +18,15 @@ class _TopicsScreenState extends State<TopicsScreen> {
   final FirebaseService _firebaseService = FirebaseService();
   final TextEditingController _topicTitleController = TextEditingController();
   final TextEditingController _topicDescController = TextEditingController();
+  final TextEditingController _videolink = TextEditingController();
 
   void _addTopic() {
     String title = _topicTitleController.text.trim();
     String description = _topicDescController.text.trim();
+    String videolink = _videolink.text.trim();
 
     if (title.isNotEmpty && description.isNotEmpty) {
-      _firebaseService.addTopic(widget.courseId, title, description);
+      _firebaseService.addTopic(widget.courseId, title, description, videolink);
       Navigator.of(context).pop();
     }
   }
@@ -34,6 +36,7 @@ class _TopicsScreenState extends State<TopicsScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Topics in ${widget.courseTitle}'),
+        backgroundColor: Colors.purple.shade400,
       ),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance
@@ -99,6 +102,10 @@ class _TopicsScreenState extends State<TopicsScreen> {
               controller: _topicDescController,
               decoration: InputDecoration(labelText: 'Topic Description'),
             ),
+            TextField(
+              controller: _videolink,
+              decoration: InputDecoration(labelText: 'Youtube Link'),
+            ),
           ],
         ),
         actions: [
@@ -106,6 +113,7 @@ class _TopicsScreenState extends State<TopicsScreen> {
             onPressed: () {
               _topicTitleController.clear();
               _topicDescController.clear();
+              _videolink.clear();
               Navigator.of(context).pop();
             },
             child: Text('Cancel'),
